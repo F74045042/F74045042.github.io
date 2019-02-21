@@ -1,4 +1,44 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="SunSJ, sunshangjih0819@gmail.com"><title>Code程式 · Sun_SJ</title><meta name="description" content="分类：Code程式 - Sun_SJ"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/selfie.png" style="width:127px;"><h3 title=""><a href="/">Sun_SJ</a></h3><div class="description"><p>NCKU CSIE | 成功大學 資訊工程學系</p></div></div></div><ul class="social-links"><li><a href="http://instagram.com/sun.sj0819"><i class="fa fa-instagram"></i></a></li><li><a href="http://facebook.com/xiaoku.p"><i class="fa fa-facebook"></i></a></li><li><a href="http://github.com/F74045042"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><span> | </span><a href="https://hexo.io/zh-cn/" target="_blank">Published with Hexo</a><div class="timeCount"><span id="timeDate">loading date...</span><span id="times">loading time...</span><script>var now = new Date();
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="SunSJ, sunshangjih0819@gmail.com"><title>Code程式 · Sun_SJ</title><meta name="description" content="分类：Code程式 - Sun_SJ"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/selfie.png" style="width:127px;"><h3 title=""><a href="/">Sun_SJ</a></h3><div class="description"><p>NCKU CSIE | 成功大學 資訊工程學系</p></div></div></div><ul class="social-links"><li><a href="http://instagram.com/sun.sj0819"><i class="fa fa-instagram"></i></a></li><li><a href="http://facebook.com/xiaoku.p"><i class="fa fa-facebook"></i></a></li><li><a href="http://github.com/F74045042"><i class="fa fa-github"></i></a></li></ul><p id="image"></p><div style="text-align:center"><canvas id="myCanvas"> </canvas></div><script>var c = document.getElementById("myCanvas");
+c.width = 32;
+c.height = 32;
+var ctx = c.getContext("2d");
+var img = new Image();
+img.src = "/images/sprite.png";
+ctx.drawImage(img, 0, 0);
+var x = 0;
+var y = 0;
+var count = 0;
+animate();
+
+function animate() {
+count += 1;
+if(count > 10){
+  ctx.clearRect(0, 0, c.width, c.height);  // clear canvas
+  ctx.drawImage(img, x, y);                       // draw image at current position
+  x = (x==-32) ? 0 : -32;
+  count = 0;
+}
+requestAnimationFrame(animate)        // loop
+}
+
+//- document.onkeydown = function(e) {
+//-   switch (e.keyCode) {
+//-       case 37:
+//-       	img.offsetX -= 2;
+//-           break;
+//-       case 38:
+//-           alert('up');
+//-           break;
+//-       case 39:
+//-       	animate();
+//-           break;
+//-       case 40:
+//-           alert('down');
+//-           break;
+//-   }
+//- };</script><style>#myCanvas {
+	//- border:2px solid;
+}</style><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><span> | </span><a href="https://hexo.io/zh-cn/" target="_blank">Published with Hexo</a><div class="timeCount"><i class="fa fa-clock-o"></i><span id="timeDate">loading date...</span><span id="times">loading time...</span><script>var now = new Date();
 function createtime() {
 var grt = new Date("02/17/2019 00:00:00");
 now.setTime(now.getTime() + 250);
@@ -19,7 +59,7 @@ snum = Math.round(seconds);
 if (String(snum).length == 1) {
 snum = "0" + snum;
 }
-document.getElementById("timeDate").innerHTML = "Blog已經運作 " + dnum + " 天 ";
+document.getElementById("timeDate").innerHTML = " Blog已經運作 " + dnum + " 天 ";
 document.getElementById("times").innerHTML = hnum + " 小時 " + mnum + " 分 " + snum + " 秒";
 }
-setInterval("createtime()", 250);</script></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首頁</a></li><li><a href="/about">關於</a></li><li><a href="/archives">歸檔</a></li><li><a href="/links">連結</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li></div><div class="avatar"><img src="/images/favicon.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="archive animated fadeInDown"><ul class="list-with-title"><div class="archive"><div class="listing-title">2019</div><ul class="listing"><div class="listing-item"><div class="listing-post"><a href="/2019/02/19/矩陣乘法的優化_Part1/" title="矩陣乘法的優化_Part1">矩陣乘法的優化_Part1</a><div class="post-time"><span class="date">02-19</span></div></div></div><div class="listing-item"><div class="listing-post"><a href="/2019/02/17/如何寫一個中央廚房管理程式_Part1/" title="如何寫一個中央廚房管理程式_Part1">如何寫一個中央廚房管理程式_Part1</a><div class="post-time"><span class="date">02-17</span></div></div></div></ul></div><div class="pagination"><ul class="clearfix"></ul></div></ul></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+setInterval("createtime()", 250);</script></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首頁</a></li><li><a href="/about">關於</a></li><li><a href="/archives">歸檔</a></li><li><a href="/links">連結</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li></div><div class="avatar"><img src="/images/favicon.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="archive animated fadeInDown"><ul class="list-with-title"><div class="archive"><div class="listing-title">2019</div><ul class="listing"><div class="listing-item"><div class="listing-post"><a href="/2019/02/21/矩陣乘法的優化-Part2/" title="矩陣乘法的優化_Part2">矩陣乘法的優化_Part2</a><div class="post-time"><span class="date">02-21</span></div></div></div><div class="listing-item"><div class="listing-post"><a href="/2019/02/19/矩陣乘法的優化_Part1/" title="矩陣乘法的優化_Part1">矩陣乘法的優化_Part1</a><div class="post-time"><span class="date">02-19</span></div></div></div><div class="listing-item"><div class="listing-post"><a href="/2019/02/17/如何寫一個中央廚房管理程式_Part1/" title="如何寫一個中央廚房管理程式_Part1">如何寫一個中央廚房管理程式_Part1</a><div class="post-time"><span class="date">02-17</span></div></div></div></ul></div><div class="pagination"><ul class="clearfix"></ul></div></ul></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
